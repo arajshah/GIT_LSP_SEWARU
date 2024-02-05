@@ -10,8 +10,6 @@ public class WordCounter {
 				
 	public static void main(String[] args) {
 		//Specifying the path to the file
-		System.out.println("Working Directory: " + System.getProperty("user.dir"));
-
 		String filepath = "src/org/howard/edu/lsp/assignment2/words.txt";
 				
 		//Creating a new file object
