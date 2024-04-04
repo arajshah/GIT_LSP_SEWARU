@@ -1,1 +1,1 @@
-package src.org.howard.edu.lsp.assignment5;
+package org.howard.edu.lsp.assignment5;

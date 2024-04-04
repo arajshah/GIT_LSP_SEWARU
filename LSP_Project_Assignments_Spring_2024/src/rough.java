@@ -10,68 +10,62 @@ import java.util.Scanner;
 
 public class rough {
 	public static void main(String[] args) {
-		
-	//need a path to file
+
+		// need a path to file
 		String filepath = "src/dasdasd";
-		
-	//creating a file object from file path
+
+		// creating a file object from file path
 		File file = new File(filepath);
-		
-	//creating a map to store frequencies
+
+		// creating a map to store frequencies
 		Map<String, Integer> wordfrequencies = new HashMap<>();
-		
-	//extracting words from the file using scanner
-		
+
+		// extracting words from the file using scanner
+
 		try {
-			
-			//creating a scanner to read file
-			
+
+			// creating a scanner to read file
+
 			Scanner scanner = new Scanner(file);
-			
+
 			while (scanner.hasNext()) {
-				
+
 				String word = scanner.next();
-				
+
 				processwords(word, wordfrequencies);
-				
+
 			}
-			
-			
-			//closing the scanner
+
+			// closing the scanner
 			scanner.close();
-			
+
 			displayWordFrequencies(wordfrequencies);
-			
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			
+
 		}
-		
+
 	}
-	
-	public static void processwords(String word, Map<String, Integer>wordfrequencies) {
-		
+
+	public static void processwords(String word, Map<String, Integer> wordfrequencies) {
+
 		if (word.matches("[a-zA-Z]+")) {
 			if (word.length() > 2) {
-				
+
 				word = word.toLowerCase();
-				
-				wordfrequencies.put(word,  wordfrequencies.getOrDefault(word, 0)+1);
+
+				wordfrequencies.put(word, wordfrequencies.getOrDefault(word, 0) + 1);
+			}
 		}
-	   }
 	}
-	
-	
-	
+
 	public static void displayWordFrequencies(Map<String, Integer> wordfrequencies) {
-		
-		for (Map.Entry<String, Integer> entry: wordfrequencies.entrySet()) {
-			System.out.println(entry.getKey() + " "+ entry.getValue());
+
+		for (Map.Entry<String, Integer> entry : wordfrequencies.entrySet()) {
+			System.out.println(entry.getKey() + " " + entry.getValue());
 		}
-		
+
 	}
-	
-	
+
 }
-
-
